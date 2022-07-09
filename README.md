@@ -1,4 +1,4 @@
-# JSON as db
+# JAD db
 
 Una base de datos en formato JSON.
 
@@ -7,9 +7,9 @@ Una base de datos en formato JSON.
 [![NPM License][license-image]][license-url]
 
 ```js
-import db from 'json-as-db'
+import db from 'jad-db'
 
-const Products = new db({
+const Products = db({
 	filePath: './src/data/products.json',
 	tableName: 'products',
 })
@@ -55,9 +55,9 @@ Estos son lo metodos que tiene la clase
 - update()
 - delete()
 
-[npm-version-url]: https://www.npmjs.com/package/json-as-db
-[npm-version-image]: https://badgen.net/npm/v/json-as-db
-[npm-install-size-image]: https://packagephobia.com/badge?p=json-as-db
-[npm-install-size-url]: https://packagephobia.com/result?p=json-as-db
-[license-image]: https://badgen.net/npm/license/json-as-db
-[license-url]: https://github.com/siCasta/db-json/blob/main/LICENSE
+[npm-version-url]: https://www.npmjs.com/package/jad-db
+[npm-version-image]: https://badgen.net/npm/v/jad-db
+[npm-install-size-image]: https://packagephobia.com/badge?p=jad-db
+[npm-install-size-url]: https://packagephobia.com/result?p=jad-db
+[license-image]: https://badgen.net/npm/license/jad-db
+[license-url]: https://github.com/json-as-db/json-as-db/blob/master/LICENSE
