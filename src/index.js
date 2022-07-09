@@ -1,7 +1,8 @@
 import { promises, existsSync } from 'fs'
 import { v4 as uuidv4 } from 'uuid'
+import path from 'path'
 
-function JAD({ filePath, tableName }) {
+function JAD({ filePath, tableName, name }) {
 	if (!filePath && !tableName) {
 		throw new Error('filePath and tableName are required')
 	}
@@ -10,7 +11,7 @@ function JAD({ filePath, tableName }) {
 		try {
 			if (!existsSync(filePath)) {
 				await promises.mkdir(filePath, { recursive: true })
-				await promises.writeFile(filePath, '{}')
+				await promises.writeFile(path.join(filePath, name), '{}')
 			}
 
 			const jsondata = await promises.readFile(filePath, 'utf8')
