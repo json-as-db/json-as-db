@@ -1,0 +1,27 @@
+{
+	"name": "json-as-db",
+	"version": "1.0.0",
+	"description": "Una base de datos en formato JSON.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/json-as-db/json-as-db.git"
+	},
+	"keywords": [
+		"json",
+		"database",
+		"json-as-db"
+	],
+	"author": "Juan Sebastian Castañeda Burbano",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/json-as-db/json-as-db/issues"
+	},
+	"homepage": "https://github.com/json-as-db/json-as-db#readme",
+	"dependencies": {
+		"uuid": "^8.3.2"
+	}
+}
