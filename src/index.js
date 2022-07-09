@@ -8,7 +8,10 @@ function JAD({ filePath, tableName }) {
 
 	const getData = async () => {
 		try {
-			if (!existsSync(filePath)) await promises.writeFile(filePath, '{}')
+			if (!existsSync(filePath)) {
+				await promises.mkdir(filePath, { recursive: true })
+				await promises.writeFile(filePath, '{}')
+			}
 
 			const jsondata = await promises.readFile(filePath, 'utf8')
 			const data = JSON.parse(jsondata)
