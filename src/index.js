@@ -1,5 +1,5 @@
-const { promises, existsSync } = require('fs')
-const { v4: uuidv4 } = require('uuid')
+import { promises, existsSync } from 'fs'
+import { v4 as uuidv4 } from 'uuid'
 
 function JAD({ filePath, tableName }) {
 	if (!filePath && !tableName) {
@@ -80,4 +80,4 @@ function JAD({ filePath, tableName }) {
 	}
 }
 
-module.exports = JAD
+export default JAD

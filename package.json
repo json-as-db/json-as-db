@@ -2,10 +2,25 @@
 	"name": "json-as-db",
 	"version": "0.1.0",
 	"description": "Una base de datos en formato JSON.",
-	"main": "index.js",
+	"main": "./dist/esm-node/index.mjs",
+	"module": "./dist/esm-node/index.mjs",
+	"exports": {
+		".": {
+			"node": {
+				"module": "./dist/esm-node/index.mjs",
+				"require": "./dist/index.js",
+				"import": "./dist/esm-node/index.mjs"
+			},
+			"default": "./dist/esm-browser/index.js"
+		}
+	},
 	"scripts": {
 		"format": "prettier --write .",
-		"lint": "eslint --fix . --ext .js"
+		"lint": "eslint --fix . --ext .js",
+		"build-browser": "babel --env-name esmBrowser src --source-root src --out-dir dist/esm-browser --copy-files --quiet",
+		"build-node": "babel --env-name esmNode src --source-root src --out-dir dist/esm-node --copy-files --quiet",
+		"build-cjs": "babel --env-name commonjs src --source-root src --out-dir dist/ --copy-files --quiet",
+		"build": "npm run build-browser && npm run build-node && npm run build-cjs"
 	},
 	"repository": {
 		"type": "git",
@@ -26,6 +41,9 @@
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.18.6",
+		"@babel/core": "^7.18.6",
+		"@babel/preset-env": "^7.18.6",
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard": "^17.0.0",

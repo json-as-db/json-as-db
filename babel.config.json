@@ -1,0 +1,25 @@
+{
+	"presets": [],
+	"plugins": [],
+	"env": {
+		"commonjs": {
+			"presets": [
+				[
+					"@babel/env",
+					{ "targets": { "node": "10" }, "modules": "commonjs" }
+				]
+			]
+		},
+		"esmBrowser": {
+			"presets": [["@babel/env", { "modules": false }]]
+		},
+		"esmNode": {
+			"presets": [
+				[
+					"@babel/env",
+					{ "targets": { "node": "10" }, "modules": false }
+				]
+			]
+		}
+	}
+}
