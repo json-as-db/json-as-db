@@ -4,7 +4,8 @@
 	"description": "Una base de datos en formato JSON.",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"format": "prettier --write .",
+		"lint": "eslint --fix . --ext .js"
 	},
 	"repository": {
 		"type": "git",
@@ -23,5 +24,14 @@
 	"homepage": "https://github.com/json-as-db/json-as-db#readme",
 	"dependencies": {
 		"uuid": "^8.3.2"
+	},
+	"devDependencies": {
+		"eslint": "^8.19.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.2.4",
+		"eslint-plugin-promise": "^6.0.0",
+		"prettier": "^2.7.1"
 	}
 }

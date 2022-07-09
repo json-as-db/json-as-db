@@ -49,11 +49,11 @@ async function getProducts() {
 
 Estos son lo metodos que tiene la clase
 
--   get()
--   getById()
--   create()
--   update()
--   delete()
+- get()
+- getById()
+- create()
+- update()
+- delete()
 
 [npm-version-url]: https://www.npmjs.com/package/json-as-db
 [npm-version-image]: https://badgen.net/npm/v/json-as-db
