@@ -30,7 +30,7 @@ function JAD({ filePath, tableName, name }) {
 			const data = await getData()
 			const id = uuidv4()
 			data[tableName][id] = object
-			await promises.writeFile(filePath, JSON.stringify(data))
+			await promises.writeFile(path.join(filePath, name), JSON.stringify(data))
 			return id
 		} catch (err) {
 			throw new Error(err)
@@ -59,7 +59,7 @@ function JAD({ filePath, tableName, name }) {
 		try {
 			const data = await getData()
 			data[tableName][id] = object
-			await promises.writeFile(filePath, JSON.stringify(data))
+			await promises.writeFile(path.join(filePath, name), JSON.stringify(data))
 		} catch (err) {
 			throw new Error(err)
 		}
@@ -69,7 +69,7 @@ function JAD({ filePath, tableName, name }) {
 		try {
 			const data = await getData()
 			delete data[tableName][id]
-			await promises.writeFile(filePath, JSON.stringify(data))
+			await promises.writeFile(path.join(filePath, name), JSON.stringify(data))
 		} catch (err) {
 			throw new Error(err)
 		}
