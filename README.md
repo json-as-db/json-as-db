@@ -23,7 +23,7 @@ $ npm i json-as-db
 
 ## Uso
 
-Es facil solo tienes que crear el archivo json y poner las tablas que desees recuerda que si no existe la tabla llamada en la clase dara un error no te preocupes por un id esta ya lo genera por ti.
+Es fácil solo tienes que crear el archivo json y unas propiedades como tablas de lo contrario lo hará por ti también viene incluido un id por defecto.
 
 ```json
 {
@@ -53,7 +53,7 @@ Estos son lo metodos que tiene la clase
 - getById()
 - create()
 - update()
-- delete()
+- deleteById()
 
 [npm-version-url]: https://www.npmjs.com/package/jad-db
 [npm-version-image]: https://badgen.net/npm/v/jad-db
