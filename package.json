@@ -1,6 +1,6 @@
 {
 	"name": "jad-db",
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"description": "Una base de datos en formato JSON.",
 	"main": "./dist/index.js",
 	"module": "./dist/esm-node/index.mjs",
