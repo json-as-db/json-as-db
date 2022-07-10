@@ -1,20 +1,25 @@
-# JAD db
-
+<h1 align="center">JAD db</h1>
+<p align="center">
 <img src="https://i.ibb.co/Hzdn1RP/JAD.png" width="300">
-
+</p>
+<p align="center">
 Una base de datos en formato JSON.
+</p>
+<div align="center">
 
 [![NPM Version][npm-version-image]][npm-version-url]
 [![NPM Install Size][npm-install-size-image]][npm-install-size-url]
 [![NPM License][license-image]][license-url]
 
+</div>
+
 ```js
 import db from 'jad-db'
 
 const Products = db({
-	filePath: 'src/data',
-	tableName: 'products',
-	name: 'products',
+  filePath: 'src/data',
+  tableName: 'products',
+  name: 'products',
 })
 ```
 
@@ -44,7 +49,7 @@ Es fácil solo tienes que crear el archivo json y unas propiedades como tablas d
 const Products = db('./src/db/database.json', 'products')
 
 async function getProducts() {
-	return await Products.get()
+  return await Products.get()
 }
 ```
 
