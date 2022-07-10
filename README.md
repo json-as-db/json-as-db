@@ -1,5 +1,7 @@
 # JAD db
 
+<img src="https://i.ibb.co/Hzdn1RP/JAD.png" width="300">
+
 Una base de datos en formato JSON.
 
 [![NPM Version][npm-version-image]][npm-version-url]
@@ -28,13 +30,13 @@ Es fácil solo tienes que crear el archivo json y unas propiedades como tablas d
 
 ```json
 {
-	"products": {
-		"uuid": {
-			"name": "",
-			"price": 0,
-			"description": ""
-		}
-	}
+  "products": {
+    "uuid": {
+      "name": "",
+      "price": 0,
+      "description": ""
+    }
+  }
 }
 ```
 
