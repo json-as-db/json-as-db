@@ -10,15 +10,16 @@ Una base de datos en formato JSON.
 import db from 'jad-db'
 
 const Products = db({
-	filePath: './src/data/products.json',
+	filePath: 'src/data',
 	tableName: 'products',
+	name: 'products',
 })
 ```
 
 ## Instalación
 
 ```console
-$ npm i json-as-db
+$ npm i jad-db
 ```
 
 ## Uso
@@ -38,7 +39,7 @@ Es fácil solo tienes que crear el archivo json y unas propiedades como tablas d
 ```
 
 ```js
-const Products = new db('./src/db/database.json', 'products')
+const Products = db('./src/db/database.json', 'products')
 
 async function getProducts() {
 	return await Products.get()
