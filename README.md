@@ -1,6 +1,5 @@
-<h1 align="center">JAD db</h1>
 <p align="center">
-<img src="https://i.ibb.co/Hzdn1RP/JAD.png" width="300">
+<img src="https://i.ibb.co/jyQxXBb/JAD.png" width="300">
 </p>
 <p align="center">
 Una base de datos en formato JSON.
@@ -13,40 +12,53 @@ Una base de datos en formato JSON.
 
 </div>
 
-```js
-import db from 'jad-db'
+## Inicio rapido
 
-const Products = db({
-  filePath: 'src/data',
-  tableName: 'products',
-  name: 'products',
-})
-```
+**1. Instalar el paquete**
 
-## Instalación
-
-```console
+```shell
 $ npm i jad-db
 ```
 
-## Uso
+**2. Usar la configuracion**
 
-Es fácil solo tienes que crear el archivo json y unas propiedades como tablas de lo contrario lo hará por ti también viene incluido un id por defecto.
+Crea un archivo `jad.config.json` en tu directorio de trabajo de lo contrario se creara el archivo `jad.db.json` en tu directorio de trabajo.
 
 ```json
 {
-  "products": {
-    "uuid": {
-      "name": "",
-      "price": 0,
-      "description": ""
-    }
-  }
+  "jadDbPath": "src/db/", // Ruta de la base de datos
+  "jadDbName": "jad.db.json" // Nombre de la base de datos
 }
 ```
 
+**3. Crear el modelo de tabla** (ES6 module syntax)
+
 ```js
-const Products = db('./src/db/database.json', 'products')
+import jad from 'jad-db'
+
+const Products = jad({
+  tableName: 'products',
+})
+
+export default Products
+```
+
+o en CommonJS
+
+```js
+const jad = require('jad-db')
+
+const Products = jad({
+  tableName: 'products',
+})
+
+module.exports = Products
+```
+
+## Uso del modelo
+
+```js
+import Products from './src/models/Products'
 
 async function getProducts() {
   return await Products.get()

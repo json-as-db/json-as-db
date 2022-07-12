@@ -1,26 +1,14 @@
 {
 	"name": "jad-db",
-	"version": "0.1.10",
+	"version": "1.0.0",
 	"description": "Una base de datos en formato JSON.",
-	"main": "./dist/index.js",
-	"module": "./dist/esm-node/index.mjs",
-	"exports": {
-		".": {
-			"node": {
-				"module": "./dist/esm-node/index.mjs",
-				"require": "./dist/index.js",
-				"import": "./dist/esm-node/index.mjs"
-			},
-			"default": "./dist/esm-browser/index.js"
-		}
-	},
+	"main": "./index.js",
 	"scripts": {
 		"format": "prettier --write .",
 		"lint": "eslint --fix . --ext .js",
-		"build-browser": "babel --env-name esmBrowser src --source-root src --out-dir dist/esm-browser --copy-files --quiet",
-		"build-node": "babel --env-name esmNode src --source-root src --out-dir dist/esm-node --copy-files --quiet",
-		"build-cjs": "babel --env-name commonjs src --source-root src --out-dir dist/ --copy-files --quiet",
-		"build": "npm run build-browser && npm run build-node && npm run build-cjs"
+		"build:browser": "tsc --rootDir ./ --outDir dist/browser --module esnext --target ES2016 --allowSyntheticDefaultImports true",
+		"build:node": "tsc --rootDir ./ --outDir dist --module commonjs --target ES2016 --allowSyntheticDefaultImports true",
+		"build": "npm run build:browser && npm run build:node"
 	},
 	"repository": {
 		"type": "git",
@@ -41,15 +29,18 @@
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.18.6",
-		"@babel/core": "^7.18.6",
-		"@babel/preset-env": "^7.18.6",
+		"@types/node": "^18.0.3",
+		"@types/uuid": "^8.3.4",
+		"@typescript-eslint/eslint-plugin": "^5.30.5",
+		"@typescript-eslint/parser": "^5.30.5",
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard": "^17.0.0",
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-n": "^15.2.4",
 		"eslint-plugin-promise": "^6.0.0",
-		"prettier": "^2.7.1"
-	}
+		"prettier": "^2.7.1",
+		"typescript": "^4.7.4"
+	},
+	"types": "types/index.d.ts"
 }
