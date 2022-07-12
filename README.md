@@ -26,8 +26,8 @@ Crea un archivo `jad.config.json` en tu directorio de trabajo de lo contrario se
 
 ```json
 {
-  "jadDbPath": "src/db/", // Ruta de la base de datos
-  "jadDbName": "jad.db.json" // Nombre de la base de datos
+  "jadDbPath": "src/db/",
+  "jadDbName": "jad.db.json"
 }
 ```
 
